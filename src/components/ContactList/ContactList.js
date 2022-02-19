@@ -1,13 +1,13 @@
 export default function ContactList({ contacts, deleteContact }) {
   return (
     <ul>
-      {contacts.map(contact => (
-        <li id={contact.id} key={contact.id}>
-          <span>{contact.name}</span> {contact.number}
+      {contacts.map(({ id, name, number }) => (
+        <li id={id} key={id}>
+          <span>{name}</span> {number}
           <button
             type="button"
             style={{ marginLeft: 20 }}
-            onClick={() => deleteContact(contact.id)}
+            onClick={() => deleteContact(id)}
           >
             Delete
           </button>
